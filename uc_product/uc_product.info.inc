@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements hook_entity_property_info_alter().
+ * Implements hook_entity_plus_property_info_alter().
  */
-function uc_product_entity_property_info_alter(&$info) {
+function uc_product_entity_plus_property_info_alter(&$info) {
   foreach (uc_product_types() as $type) {
     $properties = &$info['node']['bundles'][$type]['properties'];
 

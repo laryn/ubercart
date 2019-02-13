@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements hook_entity_property_info().
+ * Implements hook_entity_plus_property_info().
  */
-function uc_payment_entity_property_info() {
+function uc_payment_entity_plus_property_info() {
   return array(
     'uc_order' => array(
       'properties' => array(
