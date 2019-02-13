@@ -6,7 +6,6 @@ type = module
 
 dependencies[] = image
 dependencies[] = uc_store
-dependencies[] = entity_plus
 
 ; Test cases
 ; Views handlers
