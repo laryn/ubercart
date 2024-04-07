@@ -244,8 +244,8 @@ function uc_order_pane_products($op, $order, &$form = NULL, &$form_state = NULL)
 
     case 'edit-process':
       if (isset($form_state['values']['products'])) {
-        foreach ($form_state['values']['products'] as $key => $product_values) {
-          $uc_order_product = $form_state['uc_order_products'][$product_values['order_product_id']];
+        foreach ($form_state['values']['products'] as $product_values) {
+          $uc_order_product = $order->products[$product_values['order_product_id']];
           foreach ($product_values as $key => $value) {
             $uc_order_product->$key = $value;
           }
@@ -466,9 +466,6 @@ function uc_order_edit_products_form($form, &$form_state, $products) {
         '#value' => serialize($product->data),
       );
     }
-
-    // Store the existing products in form_state for retrieval upon submission.
-    $form_state['uc_order_products'] = $products;
   }
   else {
     $form['products'] = array(
