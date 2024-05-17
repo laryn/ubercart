@@ -165,6 +165,7 @@ function uc_store_menu() {
     'page callback' => 'uc_store_admin',
     'access callback' => 'uc_store_admin_access',
     'weight' => -12,
+    'icon' => 'shopping-cart-simple-fill',
     'file' => 'uc_store.admin.inc',
   );
   $items['admin/store/reports'] = array(
@@ -286,6 +287,19 @@ function uc_store_admin_access() {
  */
 function uc_store_init() {
   module_load_include('inc', 'uc_store', 'includes/tapir');
+
+  $parts = explode('.', BACKDROP_VERSION);
+  if ($parts[1] < 28) {
+    // For Backdrop versions below 1.28.0, use a CSS icon for the Store menu in
+    // the admin bar. 1.28.0 and higher will use a core icon.
+    global $base_url;
+    $path = $base_url . '/' . backdrop_get_path('module', 'uc_store');
+    backdrop_add_css('
+#admin-bar #admin-bar-menu > li > .dropdown > li > a.admin-store {
+  background: transparent url(' . $path . '/images/cart--white--64.png) 5% center no-repeat;
+  background-size: 16px;
+}', 'inline');
+  }
 }
 
 /**
