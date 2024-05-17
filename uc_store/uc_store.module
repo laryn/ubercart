@@ -292,6 +292,7 @@ function uc_store_init() {
   if ($parts[1] < 28) {
     // For Backdrop versions below 1.28.0, use a CSS icon for the Store menu in
     // the admin bar. 1.28.0 and higher will use a core icon.
+    global $base_url;
     $path = $base_url . '/' . backdrop_get_path('module', 'uc_store');
     backdrop_add_css('
 #admin-bar #admin-bar-menu > li > .dropdown > li > a.admin-store {
