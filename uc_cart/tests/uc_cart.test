@@ -240,7 +240,7 @@ class UbercartCartCheckoutTestCase extends UbercartTestHelper {
     $this->backdropPost('admin/store/settings/checkout', $settings, t('Save configuration'));
     $this->backdropLogout();
 
-    $new_user = new stdClass();
+    $new_user = new User();
     $new_user->name = $this->randomName(20);
     $new_user->pass_raw = $this->randomName(20);
 
