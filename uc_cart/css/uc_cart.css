@@ -39,14 +39,9 @@
   border: solid 1px #999;
 }
 
-.order-review-table .review-button-row td {
-  padding-top: 1em;
-  text-align: right; /* LTR */
-}
-
-.order-review-table .review-button-row div,
-.order-review-table .review-button-row form {
+.review-button-row {
   display: inline;
+  text-align: right; /* LTR */
 }
 
 /* I cannot testify for any of the data below.. it's a hodge podge. */
