@@ -12,6 +12,7 @@ function uc_product_class_default() {
   $header = array(t('Class ID'), t('Name'), t('Description'), t('Operations'));
   $rows = array();
   foreach ($classes as $class) {
+    $links = array();
     $links[] = array(
       'title' => t('edit'),
       'href' => 'admin/store/products/classes/' . $class->pcid . '/edit',
@@ -135,7 +136,7 @@ function uc_product_settings_form($form, &$form_state) {
     // If we have widgets installed, add option to not use any of them
     $options['none'] = t("Don't use any image widgets.");
   }
-  
+
   $form['product']['uc_product_image_widget'] = array(
     '#type' => 'radios',
     '#title' => t('Product image widget'),
