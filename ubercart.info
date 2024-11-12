@@ -4,7 +4,7 @@ package = Ubercart - core
 backdrop = 1.x
 type = module
 
-dependencies[] = system (>= 1.21.0)
+dependencies[] = system (>= 1.28.2)
 dependencies[] = rules (>= 2.2.0)
 dependencies[] = views
 dependencies[] = image
