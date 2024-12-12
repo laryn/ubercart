@@ -8,14 +8,9 @@
  */
 class UcAddressQuote extends UcAddress {
   /**
+   * The node ID of the product with the quote.
+   *
    * @var int
    */
   public $nid;
-
-  /**
-   * @inheritdoc
-   */
-  public function __construct($country = NULL) {
-    parent::__construct($country);
-  }
 }
